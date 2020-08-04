@@ -13,6 +13,7 @@ function Pokemon() {
         .then(res => res.data.results)
     },
     {
+      // [1]
       cacheTime: Infinity,
     }
   )
@@ -44,3 +45,19 @@ export default function App() {
     </div>
   )
 }
+
+// [NOTES]
+// inactive state
+// --> queryInfo is no longer in use, but we still have it in memory
+// (default) cacheTime: 5*50*1000
+// --> (5 minutes)
+// --> this is fine because typically after 5 minutes we would want to refetch the data anyway
+// when we need that data again...
+// --> show cached data (IMMEDIATELY)
+// --> refetch (background)
+// --> update (if necessary)
+// [1]
+// --> lower cacheTimes will show hard loading state more often
+// --> cant load data synchronously from memory cache
+// cacheTime: 0 --> always refetch b/c we delete it from cache immediately
+// cacheTime: infinity --> never refetch b/c we never delete it, even when it is not in use
