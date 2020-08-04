@@ -14,6 +14,7 @@ function Pokemon() {
         .then(res => res.data.results)
     },
     {
+      // [1]
       staleTime: Infinity,
     }
   )
@@ -41,3 +42,17 @@ export default function App() {
     </div>
   )
 }
+
+// [NOTES]
+// --> react-query very aggressive out of the box with stale time
+// --> stale as soon as it resolves --> ready to be re-fetched on window focus
+// -- (default) staleTime: 0
+// WHAT? is stale time
+// --> the amount of time before you think your data could be old (incorrect)
+// --> automatically refetch when window is refocused
+// what if we didn't want it to always refetch? 
+// --> technically, we know the pokemon api will not be changing very often
+// --> 
+
+// [1]
+// -- Infinity --> never becomes stale...EVER
