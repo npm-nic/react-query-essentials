@@ -7,6 +7,7 @@ import axios from 'axios'
 export default function App() {
   return (
     <div>
+      {/* [1] */}
       <Pokemon queryKey="pokemon1" />
       <Pokemon queryKey="pokemon1" />
       <ReactQueryDevtools />
@@ -36,3 +37,8 @@ function Pokemon({ queryKey }) {
     </div>
   )
 }
+
+// [NOTES]
+// --> same query key = same data, always
+// --> multiple components 'subscribed' to the same query
+// --> only one network request for all of them 

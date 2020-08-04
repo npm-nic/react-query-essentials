@@ -59,3 +59,10 @@ function Pokemon() {
     </div>
   )
 }
+
+// [NOTES]
+// -- request multiple assets at the same time
+// -- each have own individual query keys
+// -- re-fetched at same time
+// as long as you are accounting for loading and error states
+// --> don't really have to do anything different
