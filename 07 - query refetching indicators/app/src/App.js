@@ -21,7 +21,8 @@ function Pokemon() {
       {queryInfo.data.map(result => {
         return <div key={result.name}>{result.name}</div>
       })}
-      <br />
+          <br />
+        // [1]
       {queryInfo.isFetching ? 'Updating...' : null}
     </div>
   )
@@ -35,3 +36,8 @@ export default function App() {
     </div>
   )
 }
+
+
+// [NOTES]
+// [1]
+// --> very easily show we refetch in background 

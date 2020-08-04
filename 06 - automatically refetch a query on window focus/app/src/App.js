@@ -14,6 +14,7 @@ function Pokemon() {
         .then(res => res.data.results)
     },
     {
+      // [1]
       refetchOnWindowFocus: false,
     }
   )
@@ -39,3 +40,9 @@ export default function App() {
     </div>
   )
 }
+
+
+// [NOTES]
+// [1]
+// --> (default) refetchOnWindowFocus: true
+// --> we can configure lots of things here
